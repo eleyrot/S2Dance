@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.s2dance.ch/sitemap.xml
+Sitemap: https://s2dance.ch/sitemap.xml
