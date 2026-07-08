@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ für Events & Firmenanlässe | S²Dance</title>
+    <meta name="description" content="DJ für Firmenfeste, Vereinsanlässe und Clubs in St. Gallen und der Ostschweiz. Jetzt unverbindlich anfragen.">
+    <link rel="canonical" href="https://www.s2dance.ch/events/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DJ für Events & Firmenanlässe | S²Dance">
+    <meta property="og:description" content="DJ für Firmenfeste, Vereinsanlässe und Clubs in St. Gallen und der Ostschweiz. Jetzt unverbindlich anfragen.">
+    <meta property="og:image" content="https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&sz=w1000">
+    <meta property="og:url" content="https://www.s2dance.ch/events/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EntertainmentBusiness",
+        "@id": "https://www.s2dance.ch/#organization",
+        "name": "S²Dance",
+        "url": "https://www.s2dance.ch/events/",
+        "image": "https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&sz=w1000",
+        "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs für Events und Firmenanlässe in St. Gallen und der Ostschweiz.",
+        "telephone": "+41797702444",
+        "areaServed": { "@type": "Place", "name": "Ostschweiz" },
+        "address": { "@type": "PostalAddress", "addressLocality": "St. Gallen", "addressCountry": "CH" },
+        "founder": [
+            { "@type": "Person", "name": "Stefan Engler" },
+            { "@type": "Person", "name": "Silvan Inauen" }
+        ],
+        "sameAs": [
+            "https://www.instagram.com/S2DANCE_/"
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --accent: #00E5FF;
+            --accent-2: #B026FF;
+            --dark: #050505;
+            --gray: #888;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        .bg-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden; background: var(--dark);
+        }
+
+        .blob {
+            position: absolute; width: 80vw; height: 80vw;
+            border-radius: 50%; opacity: 0.4; filter: blur(100px);
+            animation: pulse 8s infinite ease-in-out;
+        }
+
+        .blob-1 { background: radial-gradient(circle, var(--accent) 0%, transparent 70%); top: -20%; left: -20%; }
+        .blob-2 { background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%); bottom: -20%; right: -20%; animation-delay: -4s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.15); opacity: 0.55; }
+        }
+
+        .container {
+            max-width: 1000px; margin: 0 auto; padding: 40px 20px;
+            display: flex; flex-direction: column; align-items: center; gap: 50px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header { text-align: center; }
+        .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; }
+        h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .names { color: var(--gray); font-size: 1.2rem; margin-top: -5px; font-weight: 400; letter-spacing: 1px; }
+        .slogan { font-size: 1.3rem; margin-top: 15px; font-weight: 500; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
+
+        .hero-image-wrapper {
+            width: 100%; max-width: 650px; border-radius: 20px;
+            overflow: hidden; border: 1px solid var(--border);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5); margin: 10px 0;
+            background: rgba(255,255,255,0.02); min-height: 100px;
+        }
+        .hero-image { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+        .hero-image-wrapper:hover .hero-image { transform: scale(1.02); }
+
+        /* Intro Sektion */
+        .intro-section {
+            width: 100%; max-width: 750px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 24px; padding: 45px;
+            display: flex; flex-direction: column; gap: 20px;
+        }
+        .intro-headline { font-size: 1.3rem; font-weight: 500; color: #ccc; line-height: 1.6; }
+        .intro-body { font-size: 1rem; color: #aaa; line-height: 1.8; }
+        .intro-tagline { font-size: 1.1rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+        .divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); border: none; border-radius: 2px; }
+
+        /* Inklusiv-Leistungen */
+        .included-section { width: 100%; max-width: 750px; }
+        .included-title { font-size: 1.2rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+        .included-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+        .included-item {
+            display: flex; gap: 15px; align-items: flex-start;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 22px; transition: 0.3s ease;
+        }
+        .included-item:hover { border-color: var(--accent); background: rgba(0, 229, 255, 0.04); }
+        .included-check { color: var(--accent); font-weight: bold; font-size: 1.1rem; flex-shrink: 0; padding-top: 2px; }
+        .included-text strong { display: block; font-weight: 600; font-size: 1rem; color: #eee; }
+        .included-text span { font-size: 0.9rem; color: #888; line-height: 1.6; }
+
+        .contact-note {
+            width: 100%; max-width: 650px; text-align: center;
+            background: var(--glass); border: 1px solid var(--border);
+            border-radius: 20px; padding: 25px 30px; color: #aaa; font-size: 0.95rem; line-height: 1.7;
+        }
+        .contact-note strong { color: var(--accent); }
+
+        .btn { padding: 18px 30px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; text-align: center; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; }
+        .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .btn-primary:hover { transform: scale(1.02); opacity: 0.9; }
+        .btn-secondary { border: 1px solid var(--border); color: #fff; margin-top: 15px; }
+
+        .back-link { color: var(--gray); font-size: 0.9rem; text-decoration: none; }
+        .back-link:hover { color: var(--accent); }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 30px 15px; }
+            .intro-section { padding: 30px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const STARTSEITE_URL = "/";
+
+        const whatsappUrl = "https://wa.me/41797702444?text=" + encodeURIComponent(
+            "Hallo S2Dance! Wir interessieren uns für einen DJ an unserem Event/Firmenanlass. Könnt ihr uns mehr Infos schicken?"
+        );
+
+        function App() {
+            return (
+                <div style={{ position: 'relative' }}>
+                    <div className="bg-container">
+                        <div className="blob blob-1"></div>
+                        <div className="blob blob-2"></div>
+                    </div>
+
+                    <div className="container">
+
+                        {/* HERO */}
+                        <header>
+                            <h1 className="sr-only">S²Dance – DJ für Events & Firmenanlässe in St. Gallen & der Ostschweiz</h1>
+                            <p className="eyebrow">Events & Firmenanlässe</p>
+                            <p className="slogan">Sound, der eure Bühne trägt</p>
+                        </header>
+
+                        {/* BILD */}
+                        <div className="hero-image-wrapper">
+                            <img src="https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&sz=w1000" alt="DJ-Pult beim Event" className="hero-image" />
+                        </div>
+
+                        {/* INTRO TEXT */}
+                        <div className="intro-section">
+                            <p className="intro-headline">Firmenfest, Vereinsanlass oder Geburtstagsparty – wir bringen die Energie mit.</p>
+                            <hr className="divider" />
+                            <p className="intro-body">
+                                Von der Hintergrundmusik am Apéro bis zum vollen Dancefloor am Abend: Wir passen uns eurem Anlass an und sorgen für die richtige Stimmung – egal wie gross oder klein das Event ist.<br /><br />
+                                S²Dance – das sind <strong style={{color: '#fff'}}>Stefan Engler & Silvan Inauen</strong> aus St. Gallen. Als DJ-Duo sind wir für Events und Firmenanlässe in der ganzen Ostschweiz buchbar und haben Erfahrung im Umgang mit ganz unterschiedlichen Publikums-Gruppen und Anlässen.
+                            </p>
+                            <p className="intro-tagline">Flexibel. Professionell. Direkt.</p>
+                        </div>
+
+                        {/* INKLUSIV LEISTUNGEN */}
+                        <div className="included-section">
+                            <p className="included-title">Was ihr von uns erwarten könnt</p>
+                            <ul className="included-list">
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Individuelle Musikplanung</strong>
+                                        <span>Gemeinsame Abstimmung der Musikrichtung passend zu eurem Publikum.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Flexible Technik</strong>
+                                        <span>Mischpult, Musikanlage, Licht & Nebel je nach Bedarf des Anlasses.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Full Service</strong>
+                                        <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* HINWEIS STATT RECHNER */}
+                        <div className="contact-note">
+                            Da jedes Event unterschiedlich ist, erstellen wir euch <strong>ein persönliches Angebot</strong> nach kurzer Absprache – schreibt uns einfach eure Eckdaten (Datum, Ort, Art des Anlasses, ungefähre Gästezahl).
+                        </div>
+
+                        {/* BUTTONS */}
+                        <div style={{ width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column' }}>
+                            <a href={whatsappUrl} target="_blank" className="btn btn-primary">Jetzt via WhatsApp anfragen</a>
+                            <a href="mailto:info@s2dance.ch" className="btn btn-secondary">Kontakt via E-Mail</a>
+                        </div>
+
+                        <a href={STARTSEITE_URL} className="back-link">← Zurück zur Startseite</a>
+
+                        <footer style={{ color: '#444', fontSize: '0.8rem', textAlign: 'center' }}>
+                            &copy; {new Date().getFullYear()} S²Dance - Stefan Engler & Silvan Inauen
+                        </footer>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

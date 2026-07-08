@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hochzeits-DJ St. Gallen & Ostschweiz | S²Dance</title>
+    <meta name="description" content="Preis-Rechner für euren Hochzeits-DJ in St. Gallen und der Ostschweiz. Musik, die euren schönsten Tag trägt.">
+    <link rel="canonical" href="https://www.s2dance.ch/hochzeiten/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hochzeits-DJ St. Gallen & Ostschweiz | S²Dance">
+    <meta property="og:description" content="Preis-Rechner für euren Hochzeits-DJ in St. Gallen und der Ostschweiz. Musik, die euren schönsten Tag trägt.">
+    <meta property="og:image" content="https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&sz=w1000">
+    <meta property="og:url" content="https://www.s2dance.ch/hochzeiten/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EntertainmentBusiness",
+        "@id": "https://www.s2dance.ch/#organization",
+        "name": "S²Dance",
+        "url": "https://www.s2dance.ch/hochzeiten/",
+        "image": "https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&sz=w1000",
+        "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs für Hochzeiten in St. Gallen und der Ostschweiz.",
+        "telephone": "+41797702444",
+        "priceRange": "CHF 950–1450",
+        "areaServed": { "@type": "Place", "name": "Ostschweiz" },
+        "address": { "@type": "PostalAddress", "addressLocality": "St. Gallen", "addressCountry": "CH" },
+        "founder": [
+            { "@type": "Person", "name": "Stefan Engler" },
+            { "@type": "Person", "name": "Silvan Inauen" }
+        ],
+        "sameAs": [
+            "https://www.instagram.com/S2DANCE_/"
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #050505;
+            --gray: #888;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        .bg-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden; background: var(--dark);
+        }
+
+        .blob {
+            position: absolute; width: 80vw; height: 80vw;
+            border-radius: 50%; opacity: 0.4; filter: blur(100px);
+            animation: pulse 10s infinite ease-in-out;
+        }
+
+        .blob-1 { background: radial-gradient(circle, var(--gold) 0%, transparent 70%); top: -20%; left: -20%; }
+        .blob-2 { background: radial-gradient(circle, #7000ff 0%, transparent 70%); bottom: -20%; right: -20%; animation-delay: -5s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 1000px; margin: 0 auto; padding: 40px 20px;
+            display: flex; flex-direction: column; align-items: center; gap: 50px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header { text-align: center; }
+        .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
+        h1 { font-size: 3.2rem; font-weight: 700; letter-spacing: -1px; }
+        h1 span { color: var(--gold); }
+        .names { color: var(--gray); font-size: 1.2rem; margin-top: -5px; font-weight: 400; letter-spacing: 1px; }
+        .slogan { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-style: italic; margin-top: 15px; font-weight: 500; color: #ddd; }
+
+        .hero-image-wrapper {
+            width: 100%; max-width: 650px; border-radius: 20px;
+            overflow: hidden; border: 1px solid var(--border);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5); margin: 10px 0;
+            background: rgba(255,255,255,0.02); min-height: 100px;
+        }
+        .hero-image { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+        .hero-image-wrapper:hover .hero-image { transform: scale(1.02); }
+
+        /* Intro Sektion */
+        .intro-section {
+            width: 100%; max-width: 750px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 24px; padding: 45px;
+            display: flex; flex-direction: column; gap: 20px;
+        }
+        .intro-headline { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: #ddd; font-style: italic; line-height: 1.6; }
+        .intro-body { font-size: 1rem; color: #aaa; line-height: 1.8; }
+        .intro-tagline { font-size: 1.1rem; font-weight: 600; color: var(--gold); letter-spacing: 1px; }
+        .divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); border: none; border-radius: 2px; }
+
+        /* Inklusiv-Leistungen */
+        .included-section { width: 100%; max-width: 750px; }
+        .included-title { font-size: 1.2rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+        .included-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+        .included-item {
+            display: flex; gap: 15px; align-items: flex-start;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 22px; transition: 0.3s ease;
+        }
+        .included-item:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.04); }
+        .included-check { color: var(--gold); font-weight: bold; font-size: 1.1rem; flex-shrink: 0; padding-top: 2px; }
+        .included-text strong { display: block; font-weight: 600; font-size: 1rem; color: #eee; }
+        .included-text span { font-size: 0.9rem; color: #888; line-height: 1.6; }
+
+        /* Preis-Rechner */
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; color: var(--gold); display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px; width: 100%; letter-spacing: 1px; }
+        .section-subtitle { text-align: center; color: #999; font-size: 0.95rem; margin-bottom: 30px; }
+
+        .calculator { width: 100%; max-width: 650px; display: flex; flex-direction: column; gap: 15px; }
+
+        .calc-base {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 22px;
+        }
+        .calc-base strong { font-size: 1rem; color: #eee; }
+        .calc-base span { font-size: 0.85rem; color: #888; }
+        .calc-base .calc-base-price { font-weight: 700; color: var(--gold); font-size: 1.1rem; }
+
+        .calc-option {
+            display: flex; gap: 15px; align-items: center; justify-content: space-between;
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 22px; cursor: pointer; transition: 0.3s ease;
+        }
+        .calc-option:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.04); }
+        .calc-option.active { border-color: var(--gold); background: linear-gradient(145deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%); }
+
+        .calc-option-left { display: flex; gap: 15px; align-items: flex-start; }
+        .calc-option-check {
+            flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px;
+            border: 2px solid var(--border); display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem; font-weight: bold; color: transparent; transition: 0.2s ease; margin-top: 2px;
+        }
+        .calc-option.active .calc-option-check { border-color: var(--gold); background: var(--gold); color: #000; }
+        .calc-option-text strong { display: block; font-weight: 600; font-size: 1rem; color: #eee; }
+        .calc-option-text span { font-size: 0.9rem; color: #888; line-height: 1.6; }
+        .calc-option-price { flex-shrink: 0; font-weight: 700; color: var(--gold); font-size: 1rem; white-space: nowrap; }
+
+        .calc-total {
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
+            background: var(--glass); border: 1px solid var(--gold);
+            border-radius: 20px; padding: 30px; margin-top: 10px; text-align: center;
+        }
+        .calc-total-label { font-size: 0.9rem; color: #bbb; text-transform: uppercase; letter-spacing: 2px; }
+        .calc-total-price { font-size: 2.5rem; font-weight: 700; color: var(--gold); }
+
+        .btn { padding: 18px 30px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; text-align: center; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; }
+        .btn-primary { background: var(--gold); color: #000; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-primary:hover { transform: scale(1.02); opacity: 0.9; }
+        .btn-secondary { border: 1px solid var(--border); color: #fff; margin-top: 15px; }
+
+        .back-link { color: var(--gray); font-size: 0.9rem; text-decoration: none; }
+        .back-link:hover { color: var(--gold); }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.4rem; }
+            .container { padding: 30px 15px; }
+            .intro-section { padding: 30px 25px; }
+            .calc-base { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .calc-option { flex-direction: column; align-items: stretch; gap: 10px; }
+            .calc-option-price { align-self: flex-end; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const STARTSEITE_URL = "/";
+
+        const BASE_PRICE = 950;
+        const OPTION_PRICE = 250;
+
+        function App() {
+            const [musikanlage, setMusikanlage] = React.useState(false);
+            const [lichtNebel, setLichtNebel] = React.useState(false);
+
+            const total = BASE_PRICE + (musikanlage ? OPTION_PRICE : 0) + (lichtNebel ? OPTION_PRICE : 0);
+
+            const whatsappUrl = React.useMemo(() => {
+                const lines = [
+                    "Hallo S2Dance! Wir interessieren uns für ein DJ-Angebot für unsere Hochzeit:",
+                    "- DJ-Auftritt inkl. Mischpult: CHF " + BASE_PRICE,
+                    "- Musikanlage (Lautsprecher, Subwoofer, Mikrofon): " + (musikanlage ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
+                    "- Licht & Nebelmaschine: " + (lichtNebel ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
+                    "Total: CHF " + total
+                ];
+                return "https://wa.me/41797702444?text=" + encodeURIComponent(lines.join("\n"));
+            }, [musikanlage, lichtNebel, total]);
+
+            return (
+                <div style={{ position: 'relative' }}>
+                    <div className="bg-container">
+                        <div className="blob blob-1"></div>
+                        <div className="blob blob-2"></div>
+                    </div>
+
+                    <div className="container">
+
+                        {/* HERO */}
+                        <header>
+                            <h1 className="sr-only">S²Dance – DJ für Hochzeiten in St. Gallen & der Ostschweiz</h1>
+                            <p className="eyebrow">Hochzeiten</p>
+                            <p className="slogan">«Musik, die euren schönsten Tag trägt»</p>
+                        </header>
+
+                        {/* BILD */}
+                        <div className="hero-image-wrapper">
+                            <img src="https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&sz=w1000" alt="Tanzfläche an einer Hochzeit" className="hero-image" />
+                        </div>
+
+                        {/* INTRO TEXT */}
+                        <div className="intro-section">
+                            <p className="intro-headline">Euer schönster Tag verdient den passenden Soundtrack.</p>
+                            <hr className="divider" />
+                            <p className="intro-body">
+                                Vom ersten Tanz bis zur letzten Runde auf der Tanzfläche – wir sorgen dafür, dass sich jeder Moment eurer Hochzeit richtig anfühlt.<br /><br />
+                                S²Dance – das sind <strong style={{color: '#fff'}}>Stefan Engler & Silvan Inauen</strong>, euer Hochzeits-DJ-Duo aus St. Gallen. Wir sind für Hochzeiten in der ganzen Ostschweiz buchbar und haben Erfahrung, Gefühl für Stimmung und Leidenschaft für gute Musik – dort, wo Emotionen und volle Tanzflächen zählen.
+                            </p>
+                            <p className="intro-tagline">Persönlich. Einfühlsam. Unvergesslich.</p>
+                        </div>
+
+                        {/* INKLUSIV LEISTUNGEN */}
+                        <div className="included-section">
+                            <p className="included-title">Was ist immer inbegriffen?</p>
+                            <ul className="included-list">
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>6 Stunden Spielzeit</strong>
+                                        <span>Voller Fokus auf euer Fest – ab Musikbeginn.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Individuelle Musikplanung</strong>
+                                        <span>Gemeinsame Definition der Musikrichtung im Vorfeld.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Fahrtkosten</strong>
+                                        <span>Inklusive im Umkreis von 50 km ab St. Gallen. Jeder weitere Kilometer wird fair mit CHF 0.70 berechnet.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Open-End Option</strong>
+                                        <span>Wenn die Party länger geht, hängen wir spontan an! Überstunden werden individuell berechnet.</span>
+                                    </div>
+                                </li>
+                                <li className="included-item">
+                                    <span className="included-check">✓</span>
+                                    <div className="included-text">
+                                        <strong>Full Service</strong>
+                                        <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* PREIS-RECHNER */}
+                        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div className="section-title">Euer Preis-Rechner</div>
+                            <p className="section-subtitle">Wählt eure Situation – der Preis wird sofort berechnet.</p>
+
+                            <div className="calculator">
+                                <div className="calc-base">
+                                    <div>
+                                        <strong>DJ-Auftritt inkl. Mischpult</strong>
+                                        <span> 1x Pioneer DJ-Mischpult, immer inbegriffen</span>
+                                    </div>
+                                    <div className="calc-base-price">CHF {BASE_PRICE}</div>
+                                </div>
+
+                                <div
+                                    className={"calc-option" + (musikanlage ? " active" : "")}
+                                    onClick={() => setMusikanlage(!musikanlage)}
+                                >
+                                    <div className="calc-option-left">
+                                        <div className="calc-option-check">✓</div>
+                                        <div className="calc-option-text">
+                                            <strong>Musikanlage benötigt</strong>
+                                            <span>2x Aktiv-Lautsprecher, 1x Aktiv-Subwoofer, 1x Mikrofon</span>
+                                        </div>
+                                    </div>
+                                    <div className="calc-option-price">+ CHF {OPTION_PRICE}</div>
+                                </div>
+
+                                <div
+                                    className={"calc-option" + (lichtNebel ? " active" : "")}
+                                    onClick={() => setLichtNebel(!lichtNebel)}
+                                >
+                                    <div className="calc-option-left">
+                                        <div className="calc-option-check">✓</div>
+                                        <div className="calc-option-text">
+                                            <strong>Licht & Nebelmaschine</strong>
+                                            <span>Individuelles Effektlicht + Nebelmaschine für die volle Atmosphäre</span>
+                                        </div>
+                                    </div>
+                                    <div className="calc-option-price">+ CHF {OPTION_PRICE}</div>
+                                </div>
+
+                                <div className="calc-total">
+                                    <div className="calc-total-label">Euer Preis</div>
+                                    <div className="calc-total-price">CHF {total}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* BUTTONS */}
+                        <div style={{ width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column' }}>
+                            <a href={whatsappUrl} target="_blank" className="btn btn-primary">Jetzt via WhatsApp anfragen</a>
+                            <a href="mailto:info@s2dance.ch" className="btn btn-secondary">Kontakt via E-Mail</a>
+                        </div>
+
+                        <a href={STARTSEITE_URL} className="back-link">← Zurück zur Startseite</a>
+
+                        <footer style={{ color: '#444', fontSize: '0.8rem', textAlign: 'center' }}>
+                            &copy; {new Date().getFullYear()} S²Dance - Stefan Engler & Silvan Inauen
+                        </footer>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
