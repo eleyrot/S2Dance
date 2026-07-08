@@ -49,6 +49,19 @@
             line-height: 1.5;
         }
 
+        .site-nav {
+            position: sticky; top: 0; z-index: 10;
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+            padding: 18px 20px;
+            background: rgba(5,5,5,0.85); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .site-nav a {
+            color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s;
+        }
+        .site-nav a:hover, .site-nav a.active { color: var(--gold); }
+
         .page-header { text-align: center; padding: 50px 20px 20px; }
         .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
         .page-title { font-size: 2.2rem; font-weight: 700; }
@@ -124,6 +137,13 @@
     </style>
 </head>
 <body>
+    <nav class="site-nav">
+        <a href="/">Startseite</a>
+        <a href="/events/">Events</a>
+        <a href="/hochzeiten/">Hochzeiten</a>
+        <a href="/impressionen/" class="active">Impressionen</a>
+    </nav>
+
     <header class="page-header">
         <p class="eyebrow">Impressionen</p>
         <h1 class="page-title">Momente von S²Dance</h1>

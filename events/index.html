@@ -67,6 +67,19 @@
             z-index: -1; overflow: hidden; background: var(--dark);
         }
 
+        .site-nav {
+            position: sticky; top: 0; z-index: 10;
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+            padding: 18px 20px;
+            background: rgba(5,5,5,0.85); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .site-nav a {
+            color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s;
+        }
+        .site-nav a:hover, .site-nav a.active { color: var(--accent); }
+
         .blob {
             position: absolute; width: 80vw; height: 80vw;
             border-radius: 50%; opacity: 0.4; filter: blur(100px);
@@ -179,6 +192,13 @@
                         <div className="blob blob-1"></div>
                         <div className="blob blob-2"></div>
                     </div>
+
+                    <nav className="site-nav">
+                        <a href="/">Startseite</a>
+                        <a href="/events/" className="active">Events</a>
+                        <a href="/hochzeiten/">Hochzeiten</a>
+                        <a href="/impressionen/">Impressionen</a>
+                    </nav>
 
                     <div className="container">
 
