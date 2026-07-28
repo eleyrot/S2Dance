@@ -1,0 +1,32 @@
+name: Update Impressionen data
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch latest Impressionen data from Apps Script
+        run: |
+          curl -sL "https://script.google.com/macros/s/AKfycbyBtbB6Tw5S5MTk_Gk_GgF_JahS9OqKvkhaSgsKsV9PSoGot2S_XH3TkMZfw7XG9kYf/exec" -o impressionen/data.json
+
+      - name: Validate JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('impressionen/data.json', 'utf8'))"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add impressionen/data.json
+          git diff --cached --quiet || git commit -m "Update Impressionen data [automated]"
+          git push

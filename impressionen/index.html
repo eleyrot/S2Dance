@@ -161,9 +161,9 @@
 
     <script>
     (function() {
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBtbB6Tw5S5MTk_Gk_GgF_JahS9OqKvkhaSgsKsV9PSoGot2S_XH3TkMZfw7XG9kYf/exec";
+        const DATA_URL = "/impressionen/data.json";
 
-        fetch(SCRIPT_URL)
+        fetch(DATA_URL)
             .then(r => r.json())
             .then(render)
             .catch(() => {
