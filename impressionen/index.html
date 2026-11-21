@@ -139,6 +139,11 @@
         }
 
         #s2d-loader { text-align: center; padding: 100px; color: #D4AF37; font-size: 1.2rem; }
+
+        h2 { font-size: inherit; font-weight: inherit; }
+        .site-footer { display: flex; flex-direction: column; gap: 6px; color: #444; font-size: 0.8rem; text-align: center; }
+        .footer-contact a { color: #888; text-decoration: none; }
+        .footer-contact a:hover { color: #ccc; }
     </style>
 </head>
 <body>
@@ -160,6 +165,11 @@
     </div>
 
     <a href="/" class="back-link">← Zurück zur Startseite</a>
+    <footer class="site-footer" style="padding: 0 20px 40px;">
+        <p class="footer-contact"><a href="tel:+41797702444">+41 79 770 24 44</a> · <a href="mailto:info@s2dance.ch">info@s2dance.ch</a> · <a href="https://www.instagram.com/S2DANCE_/" target="_blank" rel="noopener">Instagram</a></p>
+        <p>&copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen</p>
+    </footer>
+    <script>document.querySelectorAll('.year').forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 
     <script>
     (function() {

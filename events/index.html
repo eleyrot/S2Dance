@@ -187,6 +187,11 @@
             .site-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
             .site-nav a { text-align: center; }
         }
+
+        h2 { font-size: inherit; font-weight: inherit; }
+        .site-footer { display: flex; flex-direction: column; gap: 6px; color: #444; font-size: 0.8rem; text-align: center; }
+        .footer-contact a { color: #888; text-decoration: none; }
+        .footer-contact a:hover { color: #ccc; }
     </style>
 </head>
 <body>
@@ -230,7 +235,7 @@
 
             <!-- INKLUSIV LEISTUNGEN -->
             <div class="included-section">
-                <p class="included-title">Was ihr von uns erwarten könnt</p>
+                <h2 class="included-title">Was ihr von uns erwarten könnt</h2>
                 <ul class="included-list">
                     <li class="included-item">
                         <span class="included-check">✓</span>
@@ -269,8 +274,9 @@
 
             <a href="/" class="back-link">← Zurück zur Startseite</a>
 
-            <footer style="color: #444; font-size: 0.8rem; text-align: center;">
-                &copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen
+            <footer class="site-footer">
+                <p class="footer-contact"><a href="tel:+41797702444">+41 79 770 24 44</a> · <a href="mailto:info@s2dance.ch">info@s2dance.ch</a> · <a href="https://www.instagram.com/S2DANCE_/" target="_blank" rel="noopener">Instagram</a></p>
+                <p>&copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen</p>
             </footer>
         </main>
     </div>

@@ -58,6 +58,63 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Was kostet ein Hochzeits-DJ bei S²Dance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Der DJ-Auftritt inkl. Pioneer-Mischpult kostet CHF 950. Braucht ihr eine Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), kommen CHF 250 dazu, für Licht & Nebelmaschine ebenfalls CHF 250. Mit beiden Optionen sind es CHF 1450."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie lange legt ihr auf?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Überstunden werden individuell berechnet."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Fallen Fahrtkosten an?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Im Umkreis von 50 km ab St. Gallen sind die Fahrtkosten inbegriffen. Jeder weitere Kilometer kostet CHF 0.70."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wo seid ihr buchbar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Für Hochzeiten in St. Gallen und in der ganzen Ostschweiz."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Können wir bei der Musik mitreden?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja. Die Musikrichtung definieren wir im Vorfeld gemeinsam mit euch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie fragen wir an?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Per WhatsApp an +41 79 770 24 44 oder per E-Mail an info@s2dance.ch. Mit dem Preis-Rechner oben stellt ihr euer Paket zusammen, die WhatsApp-Anfrage enthält dann eure Auswahl."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
         :root {
             --gold: #D4AF37;
@@ -230,6 +287,20 @@
             .site-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
             .site-nav a { text-align: center; }
         }
+
+        h2 { font-size: inherit; font-weight: inherit; }
+        .site-footer { display: flex; flex-direction: column; gap: 6px; color: #444; font-size: 0.8rem; text-align: center; }
+        .footer-contact a { color: #888; text-decoration: none; }
+        .footer-contact a:hover { color: #ccc; }
+        .faq-list { display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; padding: 16px 22px; transition: border-color 0.3s ease; }
+        .faq-item[open], .faq-item:hover { border-color: var(--gold); }
+        .faq-item summary { cursor: pointer; font-weight: 600; color: #eee; list-style: none; display: flex; justify-content: space-between; gap: 15px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+        .faq-item[open] summary::after { content: '–'; }
+        .faq-item p { margin-top: 10px; font-size: 0.9rem; color: #aaa; line-height: 1.7; }
+        .faq-item summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -273,7 +344,7 @@
 
             <!-- INKLUSIV LEISTUNGEN -->
             <div class="included-section">
-                <p class="included-title">Was ist immer inbegriffen?</p>
+                <h2 class="included-title">Was ist immer inbegriffen?</h2>
                 <ul class="included-list">
                     <li class="included-item">
                         <span class="included-check">✓</span>
@@ -315,7 +386,7 @@
 
             <!-- PREIS-RECHNER -->
             <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-                <div class="section-title">Euer Preis-Rechner</div>
+                <h2 class="section-title">Euer Preis-Rechner</h2>
                 <p class="section-subtitle">Wählt eure Situation – der Preis wird sofort berechnet.</p>
 
                 <div class="calculator">
@@ -356,6 +427,37 @@
                 </div>
             </div>
 
+            <!-- FAQ -->
+            <div class="included-section">
+                <h2 class="included-title">Häufige Fragen</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Was kostet ein Hochzeits-DJ bei S²Dance?</summary>
+                        <p>Der DJ-Auftritt inkl. Pioneer-Mischpult kostet CHF 950. Braucht ihr eine Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), kommen CHF 250 dazu, für Licht &amp; Nebelmaschine ebenfalls CHF 250. Mit beiden Optionen sind es CHF 1450.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Wie lange legt ihr auf?</summary>
+                        <p>6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Überstunden werden individuell berechnet.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Fallen Fahrtkosten an?</summary>
+                        <p>Im Umkreis von 50 km ab St. Gallen sind die Fahrtkosten inbegriffen. Jeder weitere Kilometer kostet CHF 0.70.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Wo seid ihr buchbar?</summary>
+                        <p>Für Hochzeiten in St. Gallen und in der ganzen Ostschweiz.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Können wir bei der Musik mitreden?</summary>
+                        <p>Ja. Die Musikrichtung definieren wir im Vorfeld gemeinsam mit euch.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Wie fragen wir an?</summary>
+                        <p>Per WhatsApp an +41 79 770 24 44 oder per E-Mail an info@s2dance.ch. Mit dem Preis-Rechner oben stellt ihr euer Paket zusammen, die WhatsApp-Anfrage enthält dann eure Auswahl.</p>
+                    </details>
+                </div>
+            </div>
+
             <!-- BUTTONS -->
             <div style="width: 100%; max-width: 450px; display: flex; flex-direction: column;">
                 <a href="https://wa.me/41797702444" id="whatsapp-link" target="_blank" rel="noopener" class="btn btn-primary">Jetzt via WhatsApp anfragen</a>
@@ -364,8 +466,9 @@
 
             <a href="/" class="back-link">← Zurück zur Startseite</a>
 
-            <footer style="color: #444; font-size: 0.8rem; text-align: center;">
-                &copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen
+            <footer class="site-footer">
+                <p class="footer-contact"><a href="tel:+41797702444">+41 79 770 24 44</a> · <a href="mailto:info@s2dance.ch">info@s2dance.ch</a> · <a href="https://www.instagram.com/S2DANCE_/" target="_blank" rel="noopener">Instagram</a></p>
+                <p>&copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen</p>
             </footer>
         </main>
     </div>
