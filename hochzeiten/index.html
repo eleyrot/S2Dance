@@ -25,12 +25,22 @@
         "url": "https://s2dance.ch/hochzeiten/",
         "provider": { "@id": "https://s2dance.ch/#organization" },
         "areaServed": "Ostschweiz",
-        "offers": {
-            "@type": "Offer",
-            "price": "950",
-            "priceCurrency": "CHF",
-            "description": "DJ-Auftritt inkl. Pioneer-Mischpult, 6 Stunden Spielzeit, individuelle Musikplanung, Auf- und Abbau, Fahrtkosten bis 50 km ab St. Gallen. Optional Musikanlage +CHF 250, Licht & Nebel +CHF 250."
-        }
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Komplettpaket",
+                "price": "1450",
+                "priceCurrency": "CHF",
+                "description": "DJ-Auftritt inkl. Pioneer-Mischpult, Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), Effektlicht und Nebelmaschine. 6 Stunden Spielzeit, individuelle Musikplanung, Auf- und Abbau, Fahrtkosten bis 50 km ab St. Gallen. Jede weitere Stunde CHF 90."
+            },
+            {
+                "@type": "Offer",
+                "name": "DJ-Auftritt ohne Technik",
+                "price": "950",
+                "priceCurrency": "CHF",
+                "description": "DJ-Auftritt inkl. Pioneer-Mischpult, wenn Musikanlage und Licht vor Ort vorhanden sind. 6 Stunden Spielzeit, Fahrtkosten bis 50 km ab St. Gallen. Jede weitere Stunde CHF 90."
+            }
+        ]
     }
     </script>
 
@@ -47,7 +57,6 @@
         "telephone": "+41797702444",
         "priceRange": "CHF 950–1450",
         "areaServed": { "@type": "Place", "name": "Ostschweiz" },
-        "address": { "@type": "PostalAddress", "streetAddress": "Hinter dem Ack 27", "postalCode": "9037", "addressLocality": "Speicherschwendi", "addressCountry": "CH" },
         "founder": [
             { "@type": "Person", "name": "Stefan Engler" },
             { "@type": "Person", "name": "Silvan Inauen" }
@@ -68,7 +77,7 @@
                 "name": "Was kostet ein Hochzeits-DJ bei S²Dance?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Der DJ-Auftritt inkl. Pioneer-Mischpult kostet CHF 950. Braucht ihr eine Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), kommen CHF 250 dazu, für Licht & Nebelmaschine ebenfalls CHF 250. Mit beiden Optionen sind es CHF 1450."
+                    "text": "Das Komplettpaket mit Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), Effektlicht und Nebelmaschine kostet CHF 1450. Ist vor Ort schon eine Anlage vorhanden, kostet der DJ-Auftritt mit Pioneer-Mischpult CHF 950, Musikanlage und Licht & Nebel je CHF 250 dazu."
                 }
             },
             {
@@ -76,7 +85,7 @@
                 "name": "Wie lange legt ihr auf?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Überstunden werden individuell berechnet."
+                    "text": "6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Jede weitere Stunde kostet CHF 90."
                 }
             },
             {
@@ -371,7 +380,7 @@
                         <span class="included-check">✓</span>
                         <div class="included-text">
                             <strong>Open-End Option</strong>
-                            <span>Wenn die Party länger geht, hängen wir spontan an! Überstunden werden individuell berechnet.</span>
+                            <span>Wenn die Party länger geht, hängen wir spontan an! Jede weitere Stunde kostet CHF 90.</span>
                         </div>
                     </li>
                     <li class="included-item">
@@ -387,7 +396,7 @@
             <!-- PREIS-RECHNER -->
             <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
                 <h2 class="section-title">Euer Preis-Rechner</h2>
-                <p class="section-subtitle">Wählt eure Situation – der Preis wird sofort berechnet.</p>
+                <p class="section-subtitle">Komplettpaket mit Anlage, Licht &amp; Nebel: <strong style="color: #eee;">CHF 1450</strong>. Habt ihr vor Ort schon Technik, wählt die Optionen einfach ab – ab CHF 950.</p>
 
                 <div class="calculator">
                     <div class="calc-base">
@@ -398,7 +407,7 @@
                         <div class="calc-base-price">CHF 950</div>
                     </div>
 
-                    <div class="calc-option" id="opt-musikanlage" role="checkbox" aria-checked="false" tabindex="0">
+                    <div class="calc-option active" id="opt-musikanlage" role="checkbox" aria-checked="true" tabindex="0">
                         <div class="calc-option-left">
                             <div class="calc-option-check" aria-hidden="true">✓</div>
                             <div class="calc-option-text">
@@ -409,7 +418,7 @@
                         <div class="calc-option-price">+ CHF 250</div>
                     </div>
 
-                    <div class="calc-option" id="opt-licht" role="checkbox" aria-checked="false" tabindex="0">
+                    <div class="calc-option active" id="opt-licht" role="checkbox" aria-checked="true" tabindex="0">
                         <div class="calc-option-left">
                             <div class="calc-option-check" aria-hidden="true">✓</div>
                             <div class="calc-option-text">
@@ -422,7 +431,7 @@
 
                     <div class="calc-total">
                         <div class="calc-total-label">Euer Preis</div>
-                        <div class="calc-total-price" id="calc-total" aria-live="polite">CHF 950</div>
+                        <div class="calc-total-price" id="calc-total" aria-live="polite">CHF 1450</div>
                     </div>
                 </div>
             </div>
@@ -433,11 +442,11 @@
                 <div class="faq-list">
                     <details class="faq-item">
                         <summary>Was kostet ein Hochzeits-DJ bei S²Dance?</summary>
-                        <p>Der DJ-Auftritt inkl. Pioneer-Mischpult kostet CHF 950. Braucht ihr eine Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), kommen CHF 250 dazu, für Licht &amp; Nebelmaschine ebenfalls CHF 250. Mit beiden Optionen sind es CHF 1450.</p>
+                        <p>Das Komplettpaket mit Musikanlage (2 Aktiv-Lautsprecher, 1 Aktiv-Subwoofer, 1 Mikrofon), Effektlicht und Nebelmaschine kostet CHF 1450. Ist vor Ort schon eine Anlage vorhanden, kostet der DJ-Auftritt mit Pioneer-Mischpult CHF 950, Musikanlage und Licht &amp; Nebel je CHF 250 dazu.</p>
                     </details>
                     <details class="faq-item">
                         <summary>Wie lange legt ihr auf?</summary>
-                        <p>6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Überstunden werden individuell berechnet.</p>
+                        <p>6 Stunden Spielzeit ab Musikbeginn sind inbegriffen. Wenn die Party länger geht, hängen wir spontan an. Jede weitere Stunde kostet CHF 90.</p>
                     </details>
                     <details class="faq-item">
                         <summary>Fallen Fahrtkosten an?</summary>
@@ -477,7 +486,7 @@
     (function () {
         var BASE_PRICE = 950;
         var OPTION_PRICE = 250;
-        var state = { musikanlage: false, licht: false };
+        var state = { musikanlage: true, licht: true };
 
         var optMusik = document.getElementById('opt-musikanlage');
         var optLicht = document.getElementById('opt-licht');
