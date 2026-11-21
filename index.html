@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S²Dance – DJ Stefan Engler & Silvan Inauen</title>
+    <title>DJ für Hochzeiten & Events in St. Gallen | S²Dance</title>
     <link rel="icon" href="/favicon.jpg" type="image/jpeg">
     <meta name="description" content="DJ-Duo aus St. Gallen für Hochzeiten und Events in der Ostschweiz. Persönlich, modern, unkompliziert.">
     <link rel="canonical" href="https://s2dance.ch/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="S²Dance – DJ Stefan Engler & Silvan Inauen">
+    <meta property="og:title" content="DJ für Hochzeiten & Events in St. Gallen | S²Dance">
     <meta property="og:description" content="DJ-Duo aus St. Gallen für Hochzeiten und Events in der Ostschweiz. Persönlich, modern, unkompliziert.">
     <meta property="og:image" content="https://drive.google.com/thumbnail?id=11rEwXXftcp70YgWfWxH1Fg5TbrpfyblL&sz=w1000">
     <meta property="og:url" content="https://s2dance.ch/">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="application/ld+json">
     {
@@ -26,12 +22,18 @@
         "@type": "EntertainmentBusiness",
         "@id": "https://s2dance.ch/#organization",
         "name": "S²Dance",
+        "alternateName": "S2Dance",
         "url": "https://s2dance.ch/",
+        "logo": "https://s2dance.ch/favicon.jpg",
         "image": "https://drive.google.com/thumbnail?id=11rEwXXftcp70YgWfWxH1Fg5TbrpfyblL&sz=w1000",
-        "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs für Hochzeiten, Events und Firmenanlässe in St. Gallen und der Ostschweiz.",
+        "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs aus St. Gallen für Hochzeiten, Events und Firmenanlässe in der Ostschweiz.",
+        "email": "info@s2dance.ch",
         "telephone": "+41797702444",
         "priceRange": "CHF 950–1450",
-        "areaServed": { "@type": "Place", "name": "Ostschweiz" },
+        "areaServed": [
+            { "@type": "City", "name": "St. Gallen" },
+            { "@type": "AdministrativeArea", "name": "Ostschweiz" }
+        ],
         "address": { "@type": "PostalAddress", "streetAddress": "Hinter dem Ack 27", "postalCode": "9037", "addressLocality": "Speicherschwendi", "addressCountry": "CH" },
         "founder": [
             { "@type": "Person", "name": "Stefan Engler" },
@@ -166,81 +168,69 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div style="position: relative;">
+        <div class="bg-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
 
-    <script type="text/babel">
-        const HOCHZEITEN_URL = "/hochzeiten/";
-        const EVENTS_URL = "/events/";
+        <nav class="site-nav">
+            <a href="/" class="active">Startseite</a>
+            <a href="/events/">Events</a>
+            <a href="/hochzeiten/">Hochzeiten</a>
+            <a href="/impressionen/">Impressionen</a>
+        </nav>
 
-        function App() {
-            const imageUrl = "https://drive.google.com/thumbnail?id=11rEwXXftcp70YgWfWxH1Fg5TbrpfyblL&sz=w1000";
+        <main class="container">
 
-            return (
-                <div style={{ position: 'relative' }}>
-                    <div className="bg-container">
-                        <div className="blob blob-1"></div>
-                        <div className="blob blob-2"></div>
-                    </div>
+            <!-- HERO -->
+            <header>
+                <h1>S<span>²</span>Dance</h1>
+                <p class="names">Stefan Engler &amp; Silvan Inauen</p>
+                <p class="slogan">«Musik, die deinen Moment trägt»</p>
+            </header>
 
-                    <nav className="site-nav">
-                        <a href="/" className="active">Startseite</a>
-                        <a href="/events/">Events</a>
-                        <a href="/hochzeiten/">Hochzeiten</a>
-                        <a href="/impressionen/">Impressionen</a>
-                    </nav>
+            <!-- BILD -->
+            <div class="hero-image-wrapper">
+                <img src="https://drive.google.com/thumbnail?id=11rEwXXftcp70YgWfWxH1Fg5TbrpfyblL&amp;sz=w1000" alt="Stefan Engler &amp; Silvan Inauen" class="hero-image">
+            </div>
 
-                    <div className="container">
+            <!-- INTRO TEXT -->
+            <div class="intro-section">
+                <p class="intro-headline">Du planst ein Fest, das in Erinnerung bleibt?</p>
+                <hr class="divider">
+                <p class="intro-body">
+                    Dann brauchst du Musik, die sich gut anfühlt, Emotionen weckt und die Tanzfläche füllt.<br><br>
+                    S²Dance – das sind <strong style="color: #fff;">Stefan Engler &amp; Silvan Inauen</strong>, zwei DJs aus St. Gallen mit Erfahrung, Gefühl für Stimmung und Leidenschaft für gute Musik. Unser Fokus liegt auf Hochzeiten und Events in der ganzen Ostschweiz, bei denen Emotionen und volle Tanzflächen zählen.
+                </p>
+                <p class="intro-tagline">Modern. Persönlich. Unkompliziert.</p>
+            </div>
 
-                        {/* HERO */}
-                        <header>
-                            <h1>S<span>²</span>Dance</h1>
-                            <p className="names">Stefan Engler & Silvan Inauen</p>
-                            <p className="slogan">«Musik, die deinen Moment trägt»</p>
-                        </header>
-
-                        {/* BILD */}
-                        <div className="hero-image-wrapper">
-                            <img src={imageUrl} alt="Stefan Engler & Silvan Inauen" className="hero-image" />
-                        </div>
-
-                        {/* INTRO TEXT */}
-                        <div className="intro-section">
-                            <p className="intro-headline">Du planst ein Fest, das in Erinnerung bleibt?</p>
-                            <hr className="divider" />
-                            <p className="intro-body">
-                                Dann brauchst du Musik, die sich gut anfühlt, Emotionen weckt und die Tanzfläche füllt.<br /><br />
-                                S²Dance – das sind <strong style={{color: '#fff'}}>Stefan Engler & Silvan Inauen</strong>, zwei DJs aus St. Gallen mit Erfahrung, Gefühl für Stimmung und Leidenschaft für gute Musik. Unser Fokus liegt auf Hochzeiten und Events in der ganzen Ostschweiz, bei denen Emotionen und volle Tanzflächen zählen.
-                            </p>
-                            <p className="intro-tagline">Modern. Persönlich. Unkompliziert.</p>
-                        </div>
-
-                        {/* WEGWAHL */}
-                        <div className="path-section">
-                            <p className="path-title">Für welchen Anlass suchst du uns?</p>
-                            <div className="path-grid">
-                                <a href={EVENTS_URL} className="path-card">
-                                    <span className="path-card-icon">🎉</span>
-                                    <span className="path-card-label">Events</span>
-                                    <span className="path-card-sub">Club, Firmenfeste, Vereinsanlässe</span>
-                                </a>
-                                <a href={HOCHZEITEN_URL} className="path-card">
-                                    <span className="path-card-icon">💍</span>
-                                    <span className="path-card-label">Hochzeiten</span>
-                                    <span className="path-card-sub">Preis-Rechner & Pakete für euren grossen Tag</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <footer style={{ color: '#444', fontSize: '0.8rem', textAlign: 'center' }}>
-                            &copy; {new Date().getFullYear()} S²Dance - Stefan Engler & Silvan Inauen
-                        </footer>
-                    </div>
+            <!-- WEGWAHL -->
+            <div class="path-section">
+                <p class="path-title">Für welchen Anlass suchst du uns?</p>
+                <div class="path-grid">
+                    <a href="/events/" class="path-card">
+                        <span class="path-card-icon">🎉</span>
+                        <span class="path-card-label">Events</span>
+                        <span class="path-card-sub">Club, Firmenfeste, Vereinsanlässe</span>
+                    </a>
+                    <a href="/hochzeiten/" class="path-card">
+                        <span class="path-card-icon">💍</span>
+                        <span class="path-card-label">Hochzeiten</span>
+                        <span class="path-card-sub">Preis-Rechner &amp; Pakete für euren grossen Tag</span>
+                    </a>
                 </div>
-            );
-        }
+            </div>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+            <footer style="color: #444; font-size: 0.8rem; text-align: center;">
+                &copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
     </script>
 </body>
 </html>

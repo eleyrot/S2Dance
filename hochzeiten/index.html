@@ -16,9 +16,23 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Hochzeits-DJ St. Gallen & Ostschweiz",
+        "serviceType": "Hochzeits-DJ",
+        "url": "https://s2dance.ch/hochzeiten/",
+        "provider": { "@id": "https://s2dance.ch/#organization" },
+        "areaServed": "Ostschweiz",
+        "offers": {
+            "@type": "Offer",
+            "price": "950",
+            "priceCurrency": "CHF",
+            "description": "DJ-Auftritt inkl. Pioneer-Mischpult, 6 Stunden Spielzeit, individuelle Musikplanung, Auf- und Abbau, Fahrtkosten bis 50 km ab St. Gallen. Optional Musikanlage +CHF 250, Licht & Nebel +CHF 250."
+        }
+    }
+    </script>
 
     <script type="application/ld+json">
     {
@@ -26,7 +40,8 @@
         "@type": "EntertainmentBusiness",
         "@id": "https://s2dance.ch/#organization",
         "name": "S²Dance",
-        "url": "https://s2dance.ch/hochzeiten/",
+        "url": "https://s2dance.ch/",
+        "email": "info@s2dance.ch",
         "image": "https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&sz=w1000",
         "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs für Hochzeiten in St. Gallen und der Ostschweiz.",
         "telephone": "+41797702444",
@@ -218,179 +233,186 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div style="position: relative;">
+        <div class="bg-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
 
-    <script type="text/babel">
-        const STARTSEITE_URL = "/";
+        <nav class="site-nav">
+            <a href="/">Startseite</a>
+            <a href="/events/">Events</a>
+            <a href="/hochzeiten/" class="active">Hochzeiten</a>
+            <a href="/impressionen/">Impressionen</a>
+        </nav>
 
-        const BASE_PRICE = 950;
-        const OPTION_PRICE = 250;
+        <main class="container">
 
-        function App() {
-            const [musikanlage, setMusikanlage] = React.useState(false);
-            const [lichtNebel, setLichtNebel] = React.useState(false);
+            <!-- HERO -->
+            <header>
+                <h1 class="sr-only">S²Dance – DJ für Hochzeiten in St. Gallen &amp; der Ostschweiz</h1>
+                <p class="eyebrow">Hochzeiten</p>
+                <p class="slogan">«Musik, die euren schönsten Tag trägt»</p>
+            </header>
 
-            const total = BASE_PRICE + (musikanlage ? OPTION_PRICE : 0) + (lichtNebel ? OPTION_PRICE : 0);
+            <!-- BILD -->
+            <div class="hero-image-wrapper">
+                <img src="https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&amp;sz=w1000" alt="Tanzfläche an einer Hochzeit" class="hero-image">
+            </div>
 
-            const whatsappUrl = React.useMemo(() => {
-                const lines = [
-                    "Hallo S2Dance! Wir interessieren uns für ein DJ-Angebot für unsere Hochzeit:",
-                    "- DJ-Auftritt inkl. Mischpult: CHF " + BASE_PRICE,
-                    "- Musikanlage (Lautsprecher, Subwoofer, Mikrofon): " + (musikanlage ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
-                    "- Licht & Nebelmaschine: " + (lichtNebel ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
-                    "Total: CHF " + total
-                ];
-                return "https://wa.me/41797702444?text=" + encodeURIComponent(lines.join("\n"));
-            }, [musikanlage, lichtNebel, total]);
+            <!-- INTRO TEXT -->
+            <div class="intro-section">
+                <p class="intro-headline">Euer schönster Tag verdient den passenden Soundtrack.</p>
+                <hr class="divider">
+                <p class="intro-body">
+                    Vom ersten Tanz bis zur letzten Runde auf der Tanzfläche – wir sorgen dafür, dass sich jeder Moment eurer Hochzeit richtig anfühlt.<br><br>
+                    S²Dance – das sind <strong style="color: #fff;">Stefan Engler &amp; Silvan Inauen</strong>, euer Hochzeits-DJ-Duo aus St. Gallen. Wir sind für Hochzeiten in der ganzen Ostschweiz buchbar und haben Erfahrung, Gefühl für Stimmung und Leidenschaft für gute Musik – dort, wo Emotionen und volle Tanzflächen zählen.
+                </p>
+                <p class="intro-tagline">Persönlich. Einfühlsam. Unvergesslich.</p>
+            </div>
 
-            return (
-                <div style={{ position: 'relative' }}>
-                    <div className="bg-container">
-                        <div className="blob blob-1"></div>
-                        <div className="blob blob-2"></div>
+            <!-- INKLUSIV LEISTUNGEN -->
+            <div class="included-section">
+                <p class="included-title">Was ist immer inbegriffen?</p>
+                <ul class="included-list">
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>6 Stunden Spielzeit</strong>
+                            <span>Voller Fokus auf euer Fest – ab Musikbeginn.</span>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Individuelle Musikplanung</strong>
+                            <span>Gemeinsame Definition der Musikrichtung im Vorfeld.</span>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Fahrtkosten</strong>
+                            <span>Inklusive im Umkreis von 50 km ab St. Gallen. Jeder weitere Kilometer wird fair mit CHF 0.70 berechnet.</span>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Open-End Option</strong>
+                            <span>Wenn die Party länger geht, hängen wir spontan an! Überstunden werden individuell berechnet.</span>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Full Service</strong>
+                            <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- PREIS-RECHNER -->
+            <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div class="section-title">Euer Preis-Rechner</div>
+                <p class="section-subtitle">Wählt eure Situation – der Preis wird sofort berechnet.</p>
+
+                <div class="calculator">
+                    <div class="calc-base">
+                        <div>
+                            <strong>DJ-Auftritt inkl. Mischpult</strong>
+                            <span> 1x Pioneer DJ-Mischpult, immer inbegriffen</span>
+                        </div>
+                        <div class="calc-base-price">CHF 950</div>
                     </div>
 
-                    <nav className="site-nav">
-                        <a href="/">Startseite</a>
-                        <a href="/events/">Events</a>
-                        <a href="/hochzeiten/" className="active">Hochzeiten</a>
-                        <a href="/impressionen/">Impressionen</a>
-                    </nav>
-
-                    <div className="container">
-
-                        {/* HERO */}
-                        <header>
-                            <h1 className="sr-only">S²Dance – DJ für Hochzeiten in St. Gallen & der Ostschweiz</h1>
-                            <p className="eyebrow">Hochzeiten</p>
-                            <p className="slogan">«Musik, die euren schönsten Tag trägt»</p>
-                        </header>
-
-                        {/* BILD */}
-                        <div className="hero-image-wrapper">
-                            <img src="https://drive.google.com/thumbnail?id=1Ccf4NT7aQnwv2CIGSce5p42SWQsz27Me&sz=w1000" alt="Tanzfläche an einer Hochzeit" className="hero-image" />
-                        </div>
-
-                        {/* INTRO TEXT */}
-                        <div className="intro-section">
-                            <p className="intro-headline">Euer schönster Tag verdient den passenden Soundtrack.</p>
-                            <hr className="divider" />
-                            <p className="intro-body">
-                                Vom ersten Tanz bis zur letzten Runde auf der Tanzfläche – wir sorgen dafür, dass sich jeder Moment eurer Hochzeit richtig anfühlt.<br /><br />
-                                S²Dance – das sind <strong style={{color: '#fff'}}>Stefan Engler & Silvan Inauen</strong>, euer Hochzeits-DJ-Duo aus St. Gallen. Wir sind für Hochzeiten in der ganzen Ostschweiz buchbar und haben Erfahrung, Gefühl für Stimmung und Leidenschaft für gute Musik – dort, wo Emotionen und volle Tanzflächen zählen.
-                            </p>
-                            <p className="intro-tagline">Persönlich. Einfühlsam. Unvergesslich.</p>
-                        </div>
-
-                        {/* INKLUSIV LEISTUNGEN */}
-                        <div className="included-section">
-                            <p className="included-title">Was ist immer inbegriffen?</p>
-                            <ul className="included-list">
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>6 Stunden Spielzeit</strong>
-                                        <span>Voller Fokus auf euer Fest – ab Musikbeginn.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Individuelle Musikplanung</strong>
-                                        <span>Gemeinsame Definition der Musikrichtung im Vorfeld.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Fahrtkosten</strong>
-                                        <span>Inklusive im Umkreis von 50 km ab St. Gallen. Jeder weitere Kilometer wird fair mit CHF 0.70 berechnet.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Open-End Option</strong>
-                                        <span>Wenn die Party länger geht, hängen wir spontan an! Überstunden werden individuell berechnet.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Full Service</strong>
-                                        <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* PREIS-RECHNER */}
-                        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            <div className="section-title">Euer Preis-Rechner</div>
-                            <p className="section-subtitle">Wählt eure Situation – der Preis wird sofort berechnet.</p>
-
-                            <div className="calculator">
-                                <div className="calc-base">
-                                    <div>
-                                        <strong>DJ-Auftritt inkl. Mischpult</strong>
-                                        <span> 1x Pioneer DJ-Mischpult, immer inbegriffen</span>
-                                    </div>
-                                    <div className="calc-base-price">CHF {BASE_PRICE}</div>
-                                </div>
-
-                                <div
-                                    className={"calc-option" + (musikanlage ? " active" : "")}
-                                    onClick={() => setMusikanlage(!musikanlage)}
-                                >
-                                    <div className="calc-option-left">
-                                        <div className="calc-option-check">✓</div>
-                                        <div className="calc-option-text">
-                                            <strong>Musikanlage benötigt</strong>
-                                            <span>2x Aktiv-Lautsprecher, 1x Aktiv-Subwoofer, 1x Mikrofon</span>
-                                        </div>
-                                    </div>
-                                    <div className="calc-option-price">+ CHF {OPTION_PRICE}</div>
-                                </div>
-
-                                <div
-                                    className={"calc-option" + (lichtNebel ? " active" : "")}
-                                    onClick={() => setLichtNebel(!lichtNebel)}
-                                >
-                                    <div className="calc-option-left">
-                                        <div className="calc-option-check">✓</div>
-                                        <div className="calc-option-text">
-                                            <strong>Licht & Nebelmaschine</strong>
-                                            <span>Individuelles Effektlicht + Nebelmaschine für die volle Atmosphäre</span>
-                                        </div>
-                                    </div>
-                                    <div className="calc-option-price">+ CHF {OPTION_PRICE}</div>
-                                </div>
-
-                                <div className="calc-total">
-                                    <div className="calc-total-label">Euer Preis</div>
-                                    <div className="calc-total-price">CHF {total}</div>
-                                </div>
+                    <div class="calc-option" id="opt-musikanlage" role="checkbox" aria-checked="false" tabindex="0">
+                        <div class="calc-option-left">
+                            <div class="calc-option-check" aria-hidden="true">✓</div>
+                            <div class="calc-option-text">
+                                <strong>Musikanlage benötigt</strong>
+                                <span>2x Aktiv-Lautsprecher, 1x Aktiv-Subwoofer, 1x Mikrofon</span>
                             </div>
                         </div>
+                        <div class="calc-option-price">+ CHF 250</div>
+                    </div>
 
-                        {/* BUTTONS */}
-                        <div style={{ width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column' }}>
-                            <a href={whatsappUrl} target="_blank" className="btn btn-primary">Jetzt via WhatsApp anfragen</a>
-                            <a href="mailto:info@s2dance.ch" className="btn btn-secondary">Kontakt via E-Mail</a>
+                    <div class="calc-option" id="opt-licht" role="checkbox" aria-checked="false" tabindex="0">
+                        <div class="calc-option-left">
+                            <div class="calc-option-check" aria-hidden="true">✓</div>
+                            <div class="calc-option-text">
+                                <strong>Licht &amp; Nebelmaschine</strong>
+                                <span>Individuelles Effektlicht + Nebelmaschine für die volle Atmosphäre</span>
+                            </div>
                         </div>
+                        <div class="calc-option-price">+ CHF 250</div>
+                    </div>
 
-                        <a href={STARTSEITE_URL} className="back-link">← Zurück zur Startseite</a>
-
-                        <footer style={{ color: '#444', fontSize: '0.8rem', textAlign: 'center' }}>
-                            &copy; {new Date().getFullYear()} S²Dance - Stefan Engler & Silvan Inauen
-                        </footer>
+                    <div class="calc-total">
+                        <div class="calc-total-label">Euer Preis</div>
+                        <div class="calc-total-price" id="calc-total" aria-live="polite">CHF 950</div>
                     </div>
                 </div>
-            );
+            </div>
+
+            <!-- BUTTONS -->
+            <div style="width: 100%; max-width: 450px; display: flex; flex-direction: column;">
+                <a href="https://wa.me/41797702444" id="whatsapp-link" target="_blank" rel="noopener" class="btn btn-primary">Jetzt via WhatsApp anfragen</a>
+                <a href="mailto:info@s2dance.ch" class="btn btn-secondary">Kontakt via E-Mail</a>
+            </div>
+
+            <a href="/" class="back-link">← Zurück zur Startseite</a>
+
+            <footer style="color: #444; font-size: 0.8rem; text-align: center;">
+                &copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen
+            </footer>
+        </main>
+    </div>
+
+    <script>
+    (function () {
+        var BASE_PRICE = 950;
+        var OPTION_PRICE = 250;
+        var state = { musikanlage: false, licht: false };
+
+        var optMusik = document.getElementById('opt-musikanlage');
+        var optLicht = document.getElementById('opt-licht');
+        var totalEl = document.getElementById('calc-total');
+        var waLink = document.getElementById('whatsapp-link');
+
+        function update() {
+            var total = BASE_PRICE + (state.musikanlage ? OPTION_PRICE : 0) + (state.licht ? OPTION_PRICE : 0);
+            optMusik.classList.toggle('active', state.musikanlage);
+            optLicht.classList.toggle('active', state.licht);
+            optMusik.setAttribute('aria-checked', String(state.musikanlage));
+            optLicht.setAttribute('aria-checked', String(state.licht));
+            totalEl.textContent = 'CHF ' + total;
+
+            var lines = [
+                "Hallo S2Dance! Wir interessieren uns für ein DJ-Angebot für unsere Hochzeit:",
+                "- DJ-Auftritt inkl. Mischpult: CHF " + BASE_PRICE,
+                "- Musikanlage (Lautsprecher, Subwoofer, Mikrofon): " + (state.musikanlage ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
+                "- Licht & Nebelmaschine: " + (state.licht ? "Ja (+CHF " + OPTION_PRICE + ")" : "Nein"),
+                "Total: CHF " + total
+            ];
+            waLink.href = "https://wa.me/41797702444?text=" + encodeURIComponent(lines.join("\n"));
         }
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+        function bind(el, key) {
+            function toggle() { state[key] = !state[key]; update(); }
+            el.addEventListener('click', toggle);
+            el.addEventListener('keydown', function (e) {
+                if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
+            });
+        }
+
+        bind(optMusik, 'musikanlage');
+        bind(optLicht, 'licht');
+        update();
+
+        document.querySelectorAll('.year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+    })();
     </script>
 </body>
 </html>

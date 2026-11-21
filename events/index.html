@@ -16,9 +16,18 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "DJ für Events & Firmenanlässe",
+        "serviceType": "Event-DJ",
+        "url": "https://s2dance.ch/events/",
+        "provider": { "@id": "https://s2dance.ch/#organization" },
+        "areaServed": "Ostschweiz",
+        "description": "DJ für Firmenfeste, Vereinsanlässe, Clubs und Geburtstage. Musikplanung, Technik nach Bedarf (Mischpult, Anlage, Licht, Nebel), Auf- und Abbau. Persönliches Angebot nach Absprache."
+    }
+    </script>
 
     <script type="application/ld+json">
     {
@@ -26,7 +35,8 @@
         "@type": "EntertainmentBusiness",
         "@id": "https://s2dance.ch/#organization",
         "name": "S²Dance",
-        "url": "https://s2dance.ch/events/",
+        "url": "https://s2dance.ch/",
+        "email": "info@s2dance.ch",
         "image": "https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&sz=w1000",
         "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs für Events und Firmenanlässe in St. Gallen und der Ostschweiz.",
         "telephone": "+41797702444",
@@ -180,106 +190,93 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div style="position: relative;">
+        <div class="bg-container">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
 
-    <script type="text/babel">
-        const STARTSEITE_URL = "/";
+        <nav class="site-nav">
+            <a href="/">Startseite</a>
+            <a href="/events/" class="active">Events</a>
+            <a href="/hochzeiten/">Hochzeiten</a>
+            <a href="/impressionen/">Impressionen</a>
+        </nav>
 
-        const whatsappUrl = "https://wa.me/41797702444?text=" + encodeURIComponent(
-            "Hallo S2Dance! Wir interessieren uns für einen DJ an unserem Event/Firmenanlass. Könnt ihr uns mehr Infos schicken?"
-        );
+        <main class="container">
 
-        function App() {
-            return (
-                <div style={{ position: 'relative' }}>
-                    <div className="bg-container">
-                        <div className="blob blob-1"></div>
-                        <div className="blob blob-2"></div>
-                    </div>
+            <!-- HERO -->
+            <header>
+                <h1 class="sr-only">S²Dance – DJ für Events &amp; Firmenanlässe in St. Gallen &amp; der Ostschweiz</h1>
+                <p class="eyebrow">Events &amp; Firmenanlässe</p>
+                <p class="slogan">Sound, der eure Bühne trägt</p>
+            </header>
 
-                    <nav className="site-nav">
-                        <a href="/">Startseite</a>
-                        <a href="/events/" className="active">Events</a>
-                        <a href="/hochzeiten/">Hochzeiten</a>
-                        <a href="/impressionen/">Impressionen</a>
-                    </nav>
+            <!-- BILD -->
+            <div class="hero-image-wrapper">
+                <img src="https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&amp;sz=w1000" alt="DJ-Pult beim Event" class="hero-image">
+            </div>
 
-                    <div className="container">
+            <!-- INTRO TEXT -->
+            <div class="intro-section">
+                <p class="intro-headline">Firmenfest, Vereinsanlass oder Geburtstagsparty – wir bringen die Energie mit.</p>
+                <hr class="divider">
+                <p class="intro-body">
+                    Von der Hintergrundmusik am Apéro bis zum vollen Dancefloor am Abend: Wir passen uns eurem Anlass an und sorgen für die richtige Stimmung – egal wie gross oder klein das Event ist.<br><br>
+                    S²Dance – das sind <strong style="color: #fff;">Stefan Engler &amp; Silvan Inauen</strong> aus St. Gallen. Als DJ-Duo sind wir für Events und Firmenanlässe in der ganzen Ostschweiz buchbar und haben Erfahrung im Umgang mit ganz unterschiedlichen Publikums-Gruppen und Anlässen.
+                </p>
+                <p class="intro-tagline">Flexibel. Professionell. Direkt.</p>
+            </div>
 
-                        {/* HERO */}
-                        <header>
-                            <h1 className="sr-only">S²Dance – DJ für Events & Firmenanlässe in St. Gallen & der Ostschweiz</h1>
-                            <p className="eyebrow">Events & Firmenanlässe</p>
-                            <p className="slogan">Sound, der eure Bühne trägt</p>
-                        </header>
-
-                        {/* BILD */}
-                        <div className="hero-image-wrapper">
-                            <img src="https://drive.google.com/thumbnail?id=1nIIt3bF1AgWFFYL12taenDawx3taszA4&sz=w1000" alt="DJ-Pult beim Event" className="hero-image" />
+            <!-- INKLUSIV LEISTUNGEN -->
+            <div class="included-section">
+                <p class="included-title">Was ihr von uns erwarten könnt</p>
+                <ul class="included-list">
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Individuelle Musikplanung</strong>
+                            <span>Gemeinsame Abstimmung der Musikrichtung passend zu eurem Publikum.</span>
                         </div>
-
-                        {/* INTRO TEXT */}
-                        <div className="intro-section">
-                            <p className="intro-headline">Firmenfest, Vereinsanlass oder Geburtstagsparty – wir bringen die Energie mit.</p>
-                            <hr className="divider" />
-                            <p className="intro-body">
-                                Von der Hintergrundmusik am Apéro bis zum vollen Dancefloor am Abend: Wir passen uns eurem Anlass an und sorgen für die richtige Stimmung – egal wie gross oder klein das Event ist.<br /><br />
-                                S²Dance – das sind <strong style={{color: '#fff'}}>Stefan Engler & Silvan Inauen</strong> aus St. Gallen. Als DJ-Duo sind wir für Events und Firmenanlässe in der ganzen Ostschweiz buchbar und haben Erfahrung im Umgang mit ganz unterschiedlichen Publikums-Gruppen und Anlässen.
-                            </p>
-                            <p className="intro-tagline">Flexibel. Professionell. Direkt.</p>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Flexible Technik</strong>
+                            <span>Mischpult, Musikanlage, Licht &amp; Nebel je nach Bedarf des Anlasses.</span>
                         </div>
-
-                        {/* INKLUSIV LEISTUNGEN */}
-                        <div className="included-section">
-                            <p className="included-title">Was ihr von uns erwarten könnt</p>
-                            <ul className="included-list">
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Individuelle Musikplanung</strong>
-                                        <span>Gemeinsame Abstimmung der Musikrichtung passend zu eurem Publikum.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Flexible Technik</strong>
-                                        <span>Mischpult, Musikanlage, Licht & Nebel je nach Bedarf des Anlasses.</span>
-                                    </div>
-                                </li>
-                                <li className="included-item">
-                                    <span className="included-check">✓</span>
-                                    <div className="included-text">
-                                        <strong>Full Service</strong>
-                                        <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
-                                    </div>
-                                </li>
-                            </ul>
+                    </li>
+                    <li class="included-item">
+                        <span class="included-check">✓</span>
+                        <div class="included-text">
+                            <strong>Full Service</strong>
+                            <span>Komplette Koordination – inkl. Auf- und Abbau.</span>
                         </div>
+                    </li>
+                </ul>
+            </div>
 
-                        {/* HINWEIS STATT RECHNER */}
-                        <div className="contact-note">
-                            Da jedes Event unterschiedlich ist, erstellen wir euch <strong>ein persönliches Angebot</strong> nach kurzer Absprache – schreibt uns einfach eure Eckdaten (Datum, Ort, Art des Anlasses, ungefähre Gästezahl).
-                        </div>
+            <!-- HINWEIS STATT RECHNER -->
+            <div class="contact-note">
+                Da jedes Event unterschiedlich ist, erstellen wir euch <strong>ein persönliches Angebot</strong> nach kurzer Absprache – schreibt uns einfach eure Eckdaten (Datum, Ort, Art des Anlasses, ungefähre Gästezahl).
+            </div>
 
-                        {/* BUTTONS */}
-                        <div style={{ width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column' }}>
-                            <a href={whatsappUrl} target="_blank" className="btn btn-primary">Jetzt via WhatsApp anfragen</a>
-                            <a href="mailto:info@s2dance.ch" className="btn btn-secondary">Kontakt via E-Mail</a>
-                        </div>
+            <!-- BUTTONS -->
+            <div style="width: 100%; max-width: 450px; display: flex; flex-direction: column;">
+                <a href="https://wa.me/41797702444?text=Hallo%20S2Dance!%20Wir%20interessieren%20uns%20f%C3%BCr%20einen%20DJ%20an%20unserem%20Event%2FFirmenanlass.%20K%C3%B6nnt%20ihr%20uns%20mehr%20Infos%20schicken%3F" target="_blank" rel="noopener" class="btn btn-primary">Jetzt via WhatsApp anfragen</a>
+                <a href="mailto:info@s2dance.ch" class="btn btn-secondary">Kontakt via E-Mail</a>
+            </div>
 
-                        <a href={STARTSEITE_URL} className="back-link">← Zurück zur Startseite</a>
+            <a href="/" class="back-link">← Zurück zur Startseite</a>
 
-                        <footer style={{ color: '#444', fontSize: '0.8rem', textAlign: 'center' }}>
-                            &copy; {new Date().getFullYear()} S²Dance - Stefan Engler & Silvan Inauen
-                        </footer>
-                    </div>
-                </div>
-            );
-        }
+            <footer style="color: #444; font-size: 0.8rem; text-align: center;">
+                &copy; <span class="year">2026</span> S²Dance - Stefan Engler &amp; Silvan Inauen
+            </footer>
+        </main>
+    </div>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+    <script>
+        document.querySelectorAll('.year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
     </script>
 </body>
 </html>

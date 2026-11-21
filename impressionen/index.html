@@ -21,7 +21,8 @@
         "@type": "EntertainmentBusiness",
         "@id": "https://s2dance.ch/#organization",
         "name": "S²Dance",
-        "url": "https://s2dance.ch/impressionen/",
+        "url": "https://s2dance.ch/",
+        "email": "info@s2dance.ch",
         "description": "Bilder vergangener Hochzeiten und Events von S²Dance – Stefan Engler & Silvan Inauen, zwei DJs aus St. Gallen und der Ostschweiz.",
         "telephone": "+41797702444",
         "areaServed": { "@type": "Place", "name": "Ostschweiz" },
@@ -197,7 +198,7 @@
                 const wrapper = document.getElementById(`s2d-wrapper-${index}`);
 
                 const imgHTML = event.images.map(id =>
-                    `<img src="https://drive.google.com/thumbnail?id=${id}&sz=w1200" class="img-card" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">`
+                    `<img src="https://drive.google.com/thumbnail?id=${id}&sz=w1200" alt="${cleanName} – S²Dance" loading="lazy" class="img-card"onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">`
                 ).join('');
 
                 track.innerHTML = imgHTML + imgHTML + imgHTML;
