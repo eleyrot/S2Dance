@@ -29,7 +29,7 @@
         "description": "S²Dance sind Stefan Engler & Silvan Inauen – zwei DJs aus St. Gallen für Hochzeiten, Events und Firmenanlässe in der Ostschweiz.",
         "email": "info@s2dance.ch",
         "telephone": "+41797702444",
-        "priceRange": "CHF 950–1450",
+        "priceRange": "CHF 160–1450",
         "foundingDate": "2025",
         "areaServed": [
             { "@type": "City", "name": "St. Gallen" },
@@ -151,6 +151,7 @@
         .path-card-icon { font-size: 2rem; }
         .path-card-label { font-size: 1.3rem; font-weight: 700; }
         .path-card-sub { font-size: 0.85rem; color: #888; text-align: center; }
+        .path-card-wide { grid-column: 1 / -1; }
 
         .btn { padding: 18px 30px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; text-align: center; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; }
         .btn-primary { background: var(--gold); color: #000; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
@@ -164,6 +165,7 @@
             .path-grid { grid-template-columns: 1fr; }
             .site-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
             .site-nav a { text-align: center; }
+            .site-nav a:last-child:nth-child(odd) { grid-column: span 2; }
         }
 
         h2 { font-size: inherit; font-weight: inherit; }
@@ -189,6 +191,7 @@
             <a href="/events/">Events</a>
             <a href="/hochzeiten/">Hochzeiten</a>
             <a href="/impressionen/">Impressionen</a>
+            <a href="/mieten/">Anlage mieten</a>
         </nav>
 
         <main class="container">
@@ -229,6 +232,11 @@
                         <span class="path-card-icon">💍</span>
                         <span class="path-card-label">Hochzeiten</span>
                         <span class="path-card-sub">Preis-Rechner &amp; Pakete für euren grossen Tag</span>
+                    </a>
+                    <a href="/mieten/" class="path-card path-card-wide">
+                        <span class="path-card-icon">🔊</span>
+                        <span class="path-card-label">Musikanlage mieten</span>
+                        <span class="path-card-sub">Nur die Anlage für deine Party – ab CHF 160, abholen oder liefern lassen</span>
                     </a>
                 </div>
             </div>
